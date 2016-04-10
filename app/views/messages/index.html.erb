@@ -13,10 +13,18 @@
 </div>
 
 <%= form_for(@message) do |f| %>
-  名前:
-  <%= f.text_field :name %>
+  <div class="input-group">
+    <label class="input-group-addon" for="message_name">名前</label>
+    <input maxlength="10" class="form-control" size="10" type="text" name="message[name]" id="message_name" />
+  </div>
 
-  内容:
-  <%= f.text_field :body %>
-  <%= f.submit class: "btn btn-sm btn-primary" %>
+  <div class="input-group">
+    <label class="input-group-addon" for="message_body">内容</label>
+    <textarea maxlength="50" class="form-control" name="message[body]" id="message_body">
+</textarea>
+  </div>
+
+  <div class="btn-group">
+    <input type="submit" name="commit" value="Submit" class="btn btn-sm btn-success" />
+  </div>
 <% end %>
